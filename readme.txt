@@ -15,13 +15,13 @@ Running:
 
 	Visualisations can be added by commenting in lines 74 and 75 of main.cpp
 
-	LightFieldDepth <input>.LFR <white_image_folder> <output_folder>
-	LightFieldDepth <light_field_folder> <output_dir>
+	LightFieldDisp <input>.LFR <white_image_folder> <output_folder>
+	LightFieldDisp <light_field_folder> <output_dir>
 
 
 	Example:
 	cd ./build
-	./LightFieldDepth ../data/cotton .
+	./LightFieldDisp ../data/cotton .
 
 	OR for lytro images with decode:
-	./LightFieldDepth ../data/IMG_0128.LFR ../data/caldata-B5155000720/ .
+	./LightFieldDisp ../data/IMG_0128.LFR ../data/caldata-B5155000720/ .

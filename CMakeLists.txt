@@ -30,7 +30,7 @@ cmake_minimum_required(VERSION 2.8)
 set(CMAKE_CXX_STANDARD 14)
 
 # Set up project
-project(LightFieldCudaDepth)
+project(LightFieldCudaDisp)
 
 # Detect and add OpenCV
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}" ${CMAKE_MODULE_PATH})
@@ -50,7 +50,7 @@ source_group("Header Files" FILES ${HEADERS})
 
 
 # Define sources and executable
-set(EXECUTABLE_NAME "LightFieldDepth")
+set(EXECUTABLE_NAME "LightFieldDisp")
 cuda_add_executable(${EXECUTABLE_NAME} ${SOURCES} ${HEADERS})
 
 # Link against OpenCV
