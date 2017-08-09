@@ -9,7 +9,7 @@
  */
 
 /**
- * LF-TADCG-CUDA-DISP - Code for estimating the disparity map of a light field
+ * GLFCV - Light field disparity estimation using a guided filter cost volume
  *
  * Copyright (C) 2017 Adam Stacey
  *

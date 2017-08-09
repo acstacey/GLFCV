@@ -1,5 +1,5 @@
 ###############################################################################
-# LF-TADCG-CUDA-DISP - Code for estimating the disparity map of a light field
+# GLFCV - Light field disparity estimation using a guided filter cost volume
 #
 # Copyright (C) 2017 Adam Stacey
 #
@@ -30,7 +30,7 @@ cmake_minimum_required(VERSION 2.8)
 set(CMAKE_CXX_STANDARD 14)
 
 # Set up project
-project(LightFieldCudaDisp)
+project(GLFCV)
 
 # Detect and add OpenCV
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}" ${CMAKE_MODULE_PATH})
@@ -45,12 +45,12 @@ find_package(Boost 1.58 REQUIRED COMPONENTS filesystem regex)
 
 # Add files
 file(GLOB SOURCES src/*.cpp src/cuda-kernels/*.cu)
-file(GLOB HEADERS src/*.h src/cuda-kernels*.h)
+file(GLOB HEADERS src/*.h src/cuda-kernels/*.h)
 source_group("Header Files" FILES ${HEADERS})
 
 
 # Define sources and executable
-set(EXECUTABLE_NAME "LightFieldDisp")
+set(EXECUTABLE_NAME "GLFCV")
 cuda_add_executable(${EXECUTABLE_NAME} ${SOURCES} ${HEADERS})
 
 # Link against OpenCV
