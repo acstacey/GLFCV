@@ -1,18 +1,19 @@
 # GLFCV - Light field disparity estimation using a guided filter cost volume
 
 Guided filter Light Field Cost Volume is a CUDA implementation of a disparity estimation algorithm for 4D light fields.
-It uses the [guided filter](http://kaiminghe.com/eccv10/) on cost volume slices computed using the [TAD C+G metric](http://www.sciencedirect.com/science/article/pii/S1077314213000143) on 4D shears of the light field.  Estimated disparity is calculated by an argmin on the filtered cost volume over a range of disparity values.
+It uses the [guided filter](http://kaiminghe.com/eccv10/) on cost volume slices computed using the [TAD C+G](http://www.sciencedirect.com/science/article/pii/S1077314213000143) metric on 4D shears of the light field.  Estimated disparity is calculated by an argmin on the filtered cost volume over a range of disparity values.
 
 ### License
 This code is licensed under GNU GPL V3, with a commercial licence available on request.
-See LICENSE file for the full license text.
+See the LICENSE file for the full license text.
 
 Copyright (C) 2017 Adam Stacey
 
 
 
 ## Build instructions
-Install libraries as per last section of README.
+
+Install required libraries as per the last section in this README.
 
 ```
 cd ./build
@@ -24,14 +25,17 @@ make
 
 GLFCV can be run on a folder with the image formats as in the benchmark datasets
 or on an LFR or LFP lytro file with the calibration archive.
-
-Visualisations can be added by commenting in lines 74 and 75 of main.cpp
-
 ```
 GLFCV <input>.LFR <white_image_folder> <output_folder>
 GLFCV <light_field_folder> <output_dir>
 ```
 
+Visualisations can be added by using the following functions, which are commented out in main.cpp.
+```
+decoder.DisplayLightFieldSlices();
+decoder.DisplayLenslet();
+decoder.WriteLensletImage();
+```
 
 ### Examples
 #### HCI Benchmark Scene
@@ -58,20 +62,21 @@ cd ./build
 ```
 
 
-## Library installation:
+## Library Installation
 
-### Ubuntu 16.04:
+### Ubuntu 16.04
 
 #### CUDA
-Download cuda local .deb from NVIDIA
+Download the cuda local .deb from NVIDIA (https://developer.nvidia.com/cuda-downloads)
 ```
 sudo dpkg -i cuda*.deb
-sudo apt-get update
-sudo apt-get install cuda
+sudo apt update
+sudo apt install cuda
 
 export PATH=/usr/local/cuda-8.0.61/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0.61/lib64\ ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
+
 #### OpenCV
 ```
 git clone https://github.com/opencv/opencv.git
@@ -91,9 +96,10 @@ sudo make install
 sudo apt install libboost-all-dev
 ```
 
-### macOS
+### MacOS
+
 #### CUDA
-Download and run installer https://developer.nvidia.com/cuda-downloads
+Download and run the installer from NVIDIA (https://developer.nvidia.com/cuda-downloads)
 ```
 export PATH=/Developer/NVIDIA/CUDA-8.0/bin${PATH:+:${PATH}}
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
