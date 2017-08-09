@@ -3,7 +3,7 @@
 Guided filter Light Field Cost Volume is a CUDA implementation of a disparity estimation algorithm for 4D light fields.
 It uses the [guided filter](http://kaiminghe.com/eccv10/) on cost volume slices computed using the [TAD C+G](http://www.sciencedirect.com/science/article/pii/S1077314213000143) metric on 4D shears of the light field.  Estimated disparity is calculated by an argmin on the filtered cost volume over a range of disparity values.
 
-Results have been submitted to the [HCI 4D Light Field Benchmark](http://hci-lightfield.iwr.uni-heidelberg.de/about).
+Results have been evaluated on the [HCI 4D Light Field Benchmark](http://hci-lightfield.iwr.uni-heidelberg.de/about).
 
 ### License
 This code is licensed under GNU GPL V3, with a commercial licence available on request.
